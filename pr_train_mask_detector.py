@@ -27,7 +27,7 @@ ap.add_argument("-d", "--dataset", required=True,
 ap.add_argument("-p", "--plot", type=str, default="plot.png",
                 help="path to output loss/accuracy plot")
 ap.add_argument("-m", "--model", type=str,
-                default="mask_detector.model",
+                default="mask_detector",
                 help="path to output face mask detector model")
 args = vars(ap.parse_args())
 
@@ -161,6 +161,7 @@ print(classification_report(y_test.argmax(axis=1), predIdxs, target_names=lb.cla
 # serialize the model to disk
 print("Saving mask detector model...")
 model.save(args['model'], save_format='h5')
+model.save(args['model'])
 
 # plot the training loss and accuracy
 N = EPOCHS
