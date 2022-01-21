@@ -26,16 +26,20 @@ https://docs.luxonis.com/en/latest/pages/model_conversion/
 
 This will allow the model to run on OAK Device
 
+See the script: `create_openvino.sh`
+
 ```shell
-python -m mo --saved_model_dir ./mask_detector --output_dir openvino_model --framework tf --input_shape=\[1,224,224,3\]
+python -m mo --reverse_input_channels --batch 1 --mean_values \[127.5, 127.5, 127.5\] --scale_values \[127.5, 127.5, 127.5\] --saved_model_dir ./mask_detector --output_dir openvino_model
 ```
+
+
 
 After this runs, you should have a directory with an .xml, .bin, .mapping file.  The .xml and .bin can be used with the [Luxonis Myriad Online Compiler](http://blobconverter.luxonis.com) to create a .blob file
 
 or
 
 ```shell
-python -m blobconverter --openvino-xml ./openvino_model/saved_model.xml --openvino-bin ./openvino_model/saved_model.bin --shaves 6
+blobconverter --openvino-xml ./openvino_model/saved_model.xml --openvino-bin ./openvino_model/saved_model.bin --shaves 6
 ```
 
 ## Train Mask Model

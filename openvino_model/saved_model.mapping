@@ -9,20 +9,12 @@
 		<IR name="input_1" output_port_id="0" />
 	</map>
 	<map>
-		<framework name="Func/StatefulPartitionedCall/input/_0" output_port_id="input_1:0" />
-		<IR name="input_1" output_port_id="0" />
-	</map>
-	<map>
-		<framework name="input_1" output_port_id="Func/StatefulPartitionedCall/input/_0:0" />
-		<IR name="input_1" output_port_id="0" />
-	</map>
-	<map>
-		<framework name="input_1" output_port_id="Func/StatefulPartitionedCall/input/_0:0" />
-		<IR name="input_1" output_port_id="0" />
+		<framework name="input_1/scale" output_port_id="Func/StatefulPartitionedCall/input/_0:0" />
+		<IR name="input_1/scale" output_port_id="2" />
 	</map>
 	<map>
 		<framework name="Func/StatefulPartitionedCall/input/_0" output_port_id="Func/StatefulPartitionedCall/input/_0:0" />
-		<IR name="input_1" output_port_id="0" />
+		<IR name="input_1/scale" output_port_id="2" />
 	</map>
 	<map>
 		<framework name="StatefulPartitionedCall/model/Conv1_pad/Pad" output_port_id="StatefulPartitionedCall/model/Conv1_pad/Pad:0" />
