@@ -124,6 +124,7 @@ while True:
 		# unpack the bounding box and predictions
 		(startX, startY, endX, endY) = box
 		(mask, withoutMask) = pred
+		print(mask, withoutMask)
 
 		# determine the class label and color we'll use to draw
 		# the bounding box and text
