@@ -26,6 +26,7 @@ pip install scikit-learn
 pip install matplotlib
 
 pip install openvino-dev
+pip install blobconverter
 ```
 
 ## Convert Tensorflow Model to OpenVino IR
@@ -44,7 +45,7 @@ After this runs, you should have a directory with an .xml, .bin, .mapping file. 
 or
 
 ```shell
-blobconverter --openvino-xml ./openvino_model/saved_model.xml --openvino-bin ./openvino_model/saved_model.bin --shaves 6
+blobconverter --openvino-xml ./openvino_model/saved_model.xml --openvino-bin ./openvino_model/saved_model.bin --shaves 6 --output-dir ./openvino_model --no-cache
 ```
 
 ## Train Mask Model
