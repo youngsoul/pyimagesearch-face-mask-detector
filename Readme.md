@@ -40,7 +40,9 @@ See the script: `create_openvino.sh`
 python -m mo --reverse_input_channels --batch 1 --mean_values \[127.5, 127.5, 127.5\] --scale_values \[127.5, 127.5, 127.5\] --saved_model_dir ./mask_detector --output_dir openvino_model
 ```
 
-After this runs, you should have a directory with an .xml, .bin, .mapping file.  The .xml and .bin can be used with the [Luxonis Myriad Online Compiler](http://blobconverter.luxonis.com) to create a .blob file
+After this runs, you should have a directory with an .xml, .bin, .mapping file.  
+
+The .xml and .bin can be used with the [Luxonis Myriad Online Compiler](http://blobconverter.luxonis.com) to create a .blob file
 
 or
 
