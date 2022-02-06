@@ -59,6 +59,7 @@ detections = net.forward()
 for i in range(0, detections.shape[2]):
     # extract the confidence ( i.e probability ) associated with the detection
     confidence = detections[0,0, i, 2]
+    print(confidence)
 
     # filter out weak detections by ensuring the confidence is
     # greater than the minimum confidence
@@ -84,6 +85,9 @@ for i in range(0, detections.shape[2]):
         # pass the face through the model to determine if the face
         # has a mask or not
         (mask, withoutMask) = model.predict(face)[0]
+        print(mask, withoutMask)
+        if withoutMask < 0.8:
+            continue
 
         # determine the class label and color we'll use to draw
         # the bounding box and text
@@ -96,7 +100,7 @@ for i in range(0, detections.shape[2]):
         # display the label and bounding box rectangle on the output
         # frame
         cv2.putText(image, label, (startX, startY - 10),
-                    cv2.FONT_HERSHEY_SIMPLEX, 0.45, color, 2)
+                    cv2.FONT_HERSHEY_SIMPLEX, 1, color, 3)
         cv2.rectangle(image, (startX, startY), (endX, endY), color, 2)
 
 # show the output image
