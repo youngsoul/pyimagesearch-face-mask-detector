@@ -86,8 +86,8 @@ for i in range(0, detections.shape[2]):
         # has a mask or not
         (mask, withoutMask) = model.predict(face)[0]
         print(mask, withoutMask)
-        if withoutMask < 0.8:
-            continue
+        # if withoutMask < 0.8:
+        #     continue
 
         # determine the class label and color we'll use to draw
         # the bounding box and text
